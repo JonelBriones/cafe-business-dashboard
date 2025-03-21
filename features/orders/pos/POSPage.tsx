@@ -60,7 +60,7 @@ const POSPage = () => {
   return (
     <div className="flex flex-col h-full">
       {/* POS */}
-      <div className="flex-1 flex gap-4 w-full overscroll-auto">
+      <div className="flex-1 flex gap-4 w-full">
         <div className="flex flex-1 gap-4 flex-col pt-3">
           <Orders orders={orders} />
           <ProductList order={order} setOrder={setOrder} />

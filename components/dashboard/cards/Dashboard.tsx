@@ -31,9 +31,9 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
           <span>admin</span>
         </div>
       </div>
-      <div className="flex h-full">
+      <div className="flex h-full overflow-hidden">
         {currentPathname == "dashboard" && (
-          <div className="w-[260px] p-6 flex flex-col justify-between ">
+          <div className="w-[260px] p-6 flex flex-col justify-between">
             <span className="text-sm h-fit px-4 py-2 pt-4">Dashboard</span>
             <ul className="flex-1">
               {link.map((link) => (

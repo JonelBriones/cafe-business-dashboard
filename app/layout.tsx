@@ -28,7 +28,7 @@ export default function RootLayout({
       lang="en"
       className="flex place-items-center justify-center h-screen bg-neutral-200"
     >
-      <body className="flex container m-auto h-[80vh] bg-white rounded-lg overflow-hidden">
+      <body className="flex container m-auto h-[80vh] bg-white rounded-lg">
         <Dashboard children={children} />
       </body>
     </html>

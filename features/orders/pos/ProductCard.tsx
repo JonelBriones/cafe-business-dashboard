@@ -56,7 +56,8 @@ const ProductCard = ({ item, order, setOrder }: any) => {
       style: "currency",
       currency: "USD",
     });
-
+  const [src, setSrc] = useState("/images/no-image.png");
+  const [error, setError] = useState(false);
   return (
     <div
       className={`rounded-lg w-full border-2 ${
@@ -67,12 +68,17 @@ const ProductCard = ({ item, order, setOrder }: any) => {
     >
       <div className="bg-neutral-200 rounded-t-lg h-26 flex place-items-center justify-center">
         <Image
-          src={`/images/${name.toLowerCase()}.png`}
+          src={`/images/${!error ? name.toLowerCase() : "no-image"}.png`}
           height={0}
           width={0}
           sizes="100vh"
           alt={item.name}
           className="w-20"
+          onError={() => {
+            if (!error) {
+              setError(true);
+            }
+          }}
         />
       </div>
       <div className="flex flex-col gap-3 p-2">
