@@ -24,8 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="flex h-screen">
+    <html
+      lang="en"
+      className="flex place-items-center justify-center h-screen bg-neutral-200"
+    >
+      <body className="flex container m-auto h-[80vh] bg-white rounded-lg overflow-hidden">
         <Dashboard children={children} />
       </body>
     </html>
