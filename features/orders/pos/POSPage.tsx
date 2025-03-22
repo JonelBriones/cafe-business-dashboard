@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import ProductList from "./ProductList";
 import OrderSummary from "./OrderSummary";
-import Orders from "./Orders";
+import Orders from "../Orders";
 import Cart from "./Cart";
 import PaymentOptions from "./PaymentOptions";
 const orders = [

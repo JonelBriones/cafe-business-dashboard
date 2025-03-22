@@ -1,7 +1,7 @@
 "use client";
 import React, { Fragment, useState } from "react";
-import OrderQueue from "../pos/OrderQueue";
-import OrderStatusBadge from "../pos/OrderStatusBadge";
+import OrderStatusBadge from "./OrderStatusBadge";
+import OrderQueue from "./OrderQueue";
 
 const Orders = ({ orders }: any) => {
   const status = ["all", "pending", "preparing", "completed"];
@@ -12,6 +12,7 @@ const Orders = ({ orders }: any) => {
     return orders.filter((order: any) => order.status.toLowerCase() === status)
       .length;
   };
+
   return (
     <Fragment>
       <h4 className="text-lg font-medium">Order Line</h4>

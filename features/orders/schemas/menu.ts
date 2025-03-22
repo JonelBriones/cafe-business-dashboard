@@ -1,8 +1,9 @@
 export interface MenuItem {
-  id: number;
+  id: string;
   name: string;
   price: number;
-  image: string;
+  image?: string;
+  quantity: number;
 }
 export interface Menu {
   [category: string]: MenuItem[];

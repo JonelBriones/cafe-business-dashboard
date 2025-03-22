@@ -56,7 +56,7 @@ const ProductCard = ({ item, order, setOrder }: any) => {
       style: "currency",
       currency: "USD",
     });
-  const [src, setSrc] = useState("/images/no-image.png");
+
   const [error, setError] = useState(false);
   return (
     <div
