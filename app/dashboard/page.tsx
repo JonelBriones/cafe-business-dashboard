@@ -4,7 +4,9 @@ import RecentOrders from "@/features/dashboard/RecentOrders";
 import SalesChart from "@/features/dashboard/SalesChart";
 import TopSellingItems from "@/features/dashboard/TopSellingItems";
 import React, { Fragment } from "react";
-// https://dribbble.com/shots/23075802-Shipping-Management-Dashboard
+import { dailySalesData as dailySales } from "@/data/dailySales";
+import { mockOrders as orders } from "@/data/orders";
+
 const page = () => {
   return (
     <Fragment>
@@ -12,9 +14,8 @@ const page = () => {
         <span>Dashboard</span>
       </div>
       <div className="h-full flex flex-col gap-4">
-        <div className="overflow-x-scroll scrollbar-hide">
-          <DashboardStats />
-        </div>
+        <DashboardStats orders={orders} />
+
         <div className="flex gap-4 w-full  overflow-x-scroll scrollbar-hide">
           <SalesChart />
           <InventoryChart />

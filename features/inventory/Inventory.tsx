@@ -26,6 +26,11 @@ const Inventory = () => {
     setMenuItems(updatedMenuItems);
     console.log(updatedMenuItems);
   };
+  const dollarFormat = (total: number) =>
+    total.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
 
   return (
     <div className="relative h-full">
@@ -67,7 +72,7 @@ const Inventory = () => {
                   {item.stock} / {item.minStock}
                 </span>
               </td>
-              <td className="p-4 text-left">{item.price}</td>
+              <td className="p-4 text-left">{dollarFormat(item.price)}</td>
               <td className="p-4 text-left">
                 <div className="flex place-items-center w-30 justify-between h-full gap-4">
                   <button

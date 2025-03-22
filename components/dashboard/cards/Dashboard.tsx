@@ -40,7 +40,7 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
                 <li
                   key={link}
                   className={`rounded-lg px-4 py-2 w-full cursor-pointer ${
-                    link == currentPathname
+                    link.toLowerCase() == currentPathname
                       ? "bg-neutral-100"
                       : "hover:bg-neutral-50"
                   } `}
