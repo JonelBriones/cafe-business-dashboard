@@ -4,7 +4,7 @@ import RecentOrders from "@/features/dashboard/RecentOrders";
 import SalesChart from "@/features/dashboard/SalesChart";
 import TopSellingItems from "@/features/dashboard/TopSellingItems";
 import React, { Fragment } from "react";
-
+// https://dribbble.com/shots/23075802-Shipping-Management-Dashboard
 const page = () => {
   return (
     <Fragment>

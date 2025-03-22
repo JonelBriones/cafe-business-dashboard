@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { OrderItem } from "./schemas/order";
+import { itemOrder, OrderItem } from "./schemas/order";
 import { MenuItem } from "./schemas/menu";
 type Params = {
   order: OrderItem;
@@ -33,16 +33,16 @@ const Order = ({ order, orders, setOrders }: Params) => {
   });
   const STATUS_COLOR = (val: string) => {
     let initial_status = val || status;
-    if (initial_status == "Pending") return "bg-yellow-200";
-    if (initial_status == "In Progress") return "bg-orange-200";
     if (initial_status == "Completed") return "bg-green-200";
+    if (initial_status == "Pending") return "bg-purple-200";
+    if (initial_status == "In Progress") return "bg-orange-200";
     if (initial_status == "Cancelled") return "bg-red-200";
   };
   const STATUS_TEXT_COLOR = (val: string) => {
     let initial_status = val || status;
-    if (initial_status == "Pending") return "text-yellow-700";
-    if (initial_status == "In Progress") return "text-orange-700";
     if (initial_status == "Completed") return "text-green-700";
+    if (initial_status == "In Progress") return "text-orange-700";
+    if (initial_status == "Pending") return "text-purple-700";
     if (initial_status == "Cancelled") return "text-red-700";
   };
   const dollarFormat = (total: number) =>
@@ -117,7 +117,7 @@ const Order = ({ order, orders, setOrders }: Params) => {
           <span className="font-semibold">{dollarFormat(total)}</span>
         </div>
         <div className="flex flex-col">
-          {items.map((item: MenuItem) => (
+          {items.map((item: itemOrder) => (
             <div key={item.id} className="flex justify-between">
               <span className="text-neutral-500">
                 {item.quantity} {item.name}

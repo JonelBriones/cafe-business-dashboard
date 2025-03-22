@@ -41,7 +41,6 @@ const Reports = () => {
 
   return (
     <div className="pr-6 py-6">
-      Reports
       <table className="table-auto w-full">
         <thead>
           <tr>
@@ -60,7 +59,7 @@ const Reports = () => {
               </td>
               <td className="p-4 text-left">{formatDate(sale.date)}</td>
               <td className="p-4 text-left">
-                <div className="flex gap-4 place-items-center justify-between w-3/5">
+                <div className="flex gap-4 place-items-center justify-between w-3/4">
                   <span>{sale.totalOrders}</span>
                   <span className="flex gap-2 place-items-center">
                     {percentFormat(compareTodaysOrders(sale.totalOrders))}

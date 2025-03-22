@@ -3,7 +3,8 @@ export interface MenuItem {
   name: string;
   price: number;
   image?: string;
-  quantity: number;
+  stock: number;
+  minStock: number;
 }
 export interface Menu {
   [category: string]: MenuItem[];

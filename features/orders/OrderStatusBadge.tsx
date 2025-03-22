@@ -1,26 +1,36 @@
 import React from "react";
+import { OrderItem } from "./schemas/order";
 
+type Params = {
+  text: string;
+  selectedStatus: string;
+  total: number;
+  setSelectedStatus: React.Dispatch<React.SetStateAction<string>>;
+};
 const OrderStatusBadge = ({
   text,
   selectedStatus,
   total,
   setSelectedStatus,
-}: any) => {
+}: Params) => {
   const STATUS_COLOR_BORDER_CONTAINER = () => {
     if (text == selectedStatus) {
-      if (text == "all") return "border-green-500";
-      if (text == "pending") return "border-red-500";
-      if (text == "preparing") return "border-orange-500";
-      if (text == "completed") return "border-purple-500";
+      if (text == "All") return "border-blue-500";
+      if (text == "Completed") return "border-green-500";
+      if (text == "In Progress") return "border-orange-500";
+      if (text == "Pending") return "border-purple-500";
+      if (text == "Cancelled") return "border-red-500";
     }
     return "border-neutral-200";
   };
   const STATUS_COLOR_BORDER = () => {
-    if (text == "all") return "bg-green-500";
-    if (text == "pending") return "bg-red-500";
-    if (text == "preparing") return "bg-orange-500";
-    if (text == "completed") return "bg-purple-500";
+    if (text == "All") return "bg-blue-500";
+    if (text == "Completed") return "bg-green-500";
+    if (text == "In Progress") return "bg-orange-500";
+    if (text == "Pending") return "bg-purple-500";
+    if (text == "Cancelled") return "bg-red-500";
   };
+
   return (
     <button
       onClick={() => setSelectedStatus(text)}

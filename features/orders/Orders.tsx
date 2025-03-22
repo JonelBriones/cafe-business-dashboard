@@ -2,21 +2,25 @@
 import React, { Fragment, useState } from "react";
 import OrderStatusBadge from "./OrderStatusBadge";
 import OrderQueue from "./OrderQueue";
+import { mockOrders as mockOrders } from "@/data/orders";
+import { OrderItem } from "./schemas/order";
 
-const Orders = ({ orders }: any) => {
-  const status = ["all", "pending", "preparing", "completed"];
-  const [selectedStatus, setSelectedStatus] = useState("all");
-
+const Orders = () => {
+  const status = ["All", "Pending", "In Progress", "Completed", "Cancelled"];
+  const [selectedStatus, setSelectedStatus] = useState("All");
+  let orders =
+    selectedStatus === "All"
+      ? mockOrders
+      : mockOrders.filter((order) => order.status === selectedStatus);
   const TOTAL_ITEMS = (status: string) => {
-    if (status == "all") return orders.length;
-    return orders.filter((order: any) => order.status.toLowerCase() === status)
-      .length;
+    if (status == "All") return mockOrders.length;
+    return mockOrders.filter((order: any) => order.status === status).length;
   };
 
   return (
     <Fragment>
       <h4 className="text-lg font-medium">Order Line</h4>
-      <div className="flex gap-2">
+      <div className="flex gap-2 w-208">
         {status.map((status) => (
           <Fragment key={status}>
             <OrderStatusBadge
@@ -28,8 +32,8 @@ const Orders = ({ orders }: any) => {
           </Fragment>
         ))}
       </div>
-      <div className="flex gap-3">
-        {orders.map((order: any) => (
+      <div className="flex gap-3 overflow-auto w-208">
+        {orders.map((order: OrderItem) => (
           <Fragment key={order.id}>
             <OrderQueue order={order} />
           </Fragment>

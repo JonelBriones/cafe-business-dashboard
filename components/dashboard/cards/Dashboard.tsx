@@ -77,7 +77,7 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
             </ul>
           </div>
         )}
-        <div className="w-full pl-6 border-l border-neutral-200 overflow-auto">
+        <div className="w-full pl-4 border-l  border-neutral-200 overflow-auto h-full">
           {children}
         </div>
       </div>

@@ -45,7 +45,7 @@ const ProductList = ({ order, setOrder }: any) => {
         ))}
       </div>
 
-      <div className="grid grid-cols-4 gap-2 overflow-auto h-150">
+      <div className="grid grid-cols-4 gap-2 overflow-auto h-140 w-208">
         {menuItems.map((item) => (
           <Fragment key={item.id}>
             <ProductCard

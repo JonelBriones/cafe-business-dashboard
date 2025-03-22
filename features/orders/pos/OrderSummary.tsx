@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { CartInterface, OrderItem } from "../schemas/order";
 
-const OrderSummary = ({ order }: any) => {
+const OrderSummary = ({ order }: { order: OrderItem }) => {
   const { items } = order;
 
   const subtotal = parseFloat(

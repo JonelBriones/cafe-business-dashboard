@@ -60,7 +60,7 @@ const ProductCard = ({ item, order, setOrder }: any) => {
   const [error, setError] = useState(false);
   return (
     <div
-      className={`rounded-lg w-full border-2 ${
+      className={`rounded-lg w-full border-2  shadow-md ${
         order.items.find((item: any) => item.name == name)
           ? "border-green-500"
           : "border-transparent"
@@ -68,7 +68,7 @@ const ProductCard = ({ item, order, setOrder }: any) => {
     >
       <div className="bg-neutral-200 rounded-t-lg h-26 flex place-items-center justify-center">
         <Image
-          src={`/images/${!error ? name.toLowerCase() : "no-image"}.png`}
+          src={item.image}
           height={0}
           width={0}
           sizes="100vh"
@@ -84,7 +84,7 @@ const ProductCard = ({ item, order, setOrder }: any) => {
       <div className="flex flex-col gap-3 p-2">
         <div className="flex flex-col">
           <span className="text-sm text-neutral-500">{category}</span>
-          <span className="font-semibold">{name.toLowerCase()}</span>
+          <span className="font-semibold h-12">{name.toLowerCase()}</span>
         </div>
 
         <span className="font-semibold">{dollarFormat(price)}</span>
