@@ -34,7 +34,7 @@ const DashboardStats = ({ orders }: { orders: OrderItem[] }) => {
   };
 
   return (
-    <div className="flex gap-4 rounded-lg border border-neutral-200 p-2 px-4 w-fit">
+    <div className="flex gap-4 rounded-lg border border-neutral-200 p-2 px-4 w-fit h-fit">
       {Object.keys(stats).map((stat, idx) => (
         <Fragment key={idx}>
           <div className="flex flex-col gap-1 place-items-center ">

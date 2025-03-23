@@ -1,9 +1,81 @@
 export const dailySalesData = [
   {
+    date: "2025-03-01",
+    totalSales: 950.0,
+    totalOrders: 70,
+    avgOrderValue: 13.57,
+  },
+  {
+    date: "2025-03-02",
+    totalSales: 1025.5,
+    totalOrders: 75,
+    avgOrderValue: 13.67,
+  },
+  {
+    date: "2025-03-03",
+    totalSales: 1100.75,
+    totalOrders: 80,
+    avgOrderValue: 13.76,
+  },
+  {
+    date: "2025-03-04",
+    totalSales: 1200.0,
+    totalOrders: 88,
+    avgOrderValue: 13.64,
+  },
+  {
+    date: "2025-03-05",
+    totalSales: 1250.5,
+    totalOrders: 90,
+    avgOrderValue: 13.89,
+  },
+  {
+    date: "2025-03-06",
+    totalSales: 1300.3,
+    totalOrders: 95,
+    avgOrderValue: 13.69,
+  },
+  {
+    date: "2025-03-07",
+    totalSales: 1375.0,
+    totalOrders: 100,
+    avgOrderValue: 13.75,
+  },
+  {
+    date: "2025-03-08",
+    totalSales: 1450.2,
+    totalOrders: 105,
+    avgOrderValue: 13.81,
+  },
+  {
+    date: "2025-03-09",
+    totalSales: 1125.75,
+    totalOrders: 85,
+    avgOrderValue: 13.24,
+  },
+  {
+    date: "2025-03-10",
+    totalSales: 1175.9,
+    totalOrders: 88,
+    avgOrderValue: 13.36,
+  },
+  {
+    date: "2025-03-11",
+    totalSales: 1280.5,
+    totalOrders: 95,
+    avgOrderValue: 13.48,
+  },
+  {
+    date: "2025-03-12",
+    totalSales: 1355.2,
+    totalOrders: 98,
+    avgOrderValue: 13.83,
+  },
+  {
     date: "2025-03-13",
     totalSales: 1200.5,
     totalOrders: 85,
-    avgOrderValue: 14.12, // totalSales / totalOrders
+    avgOrderValue: 14.12,
   },
   {
     date: "2025-03-14",
@@ -40,5 +112,23 @@ export const dailySalesData = [
     totalSales: 1900.3,
     totalOrders: 120,
     avgOrderValue: 15.84,
+  },
+  {
+    date: "2025-03-20",
+    totalSales: 1850.0,
+    totalOrders: 115,
+    avgOrderValue: 16.09,
+  },
+  {
+    date: "2025-03-21",
+    totalSales: 1955.2,
+    totalOrders: 123,
+    avgOrderValue: 15.89,
+  },
+  {
+    date: "2025-03-22",
+    totalSales: 2025.75,
+    totalOrders: 130,
+    avgOrderValue: 15.59,
   },
 ];

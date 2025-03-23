@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./index.css";
 import Dashboard from "@/components/dashboard/cards/Dashboard";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

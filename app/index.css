@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+  --color-accent: #6e44ff;
+  --color-accent-dimmed: #6e44ff;
+}
+.span {
+  color: rgb(110, 68, 255, 5);
+}

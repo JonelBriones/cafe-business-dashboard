@@ -5,12 +5,12 @@ const TopSellingItems = () => {
     <div className="flex flex-1 flex-col w-full">
       <div className="flex justify-between ">
         <span>Top Selling</span>
-        <div>
+        {/* <div>
           <span>sort by</span>
           <span>export</span>
-        </div>
+        </div> */}
       </div>
-      <div className="flex-1">TopSellingItems</div>
+      {/* <div className="flex-1">TopSellingItems</div> */}
     </div>
   );
 };
