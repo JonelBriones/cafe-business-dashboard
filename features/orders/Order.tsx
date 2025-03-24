@@ -7,8 +7,9 @@ type Params = {
   setOrders: any;
 };
 const Order = ({ order, orders, setOrders }: Params) => {
-  const { id, customerName, items, total, status, createdAt } = order;
+  const { id, customerName, items, status, createdAt } = order;
   const [toggleUpdateStatus, setToggleUpdateStatus] = useState(false);
+  const total = items.reduce((a, b) => a + b.price * b.quantity, 0);
   const statuses = ["In Progress", "Completed", "Cancelled"];
   const weekdays = [
     "Sunday",
@@ -60,7 +61,7 @@ const Order = ({ order, orders, setOrders }: Params) => {
 
     setToggleUpdateStatus(false);
   };
-  // console.log(orders);
+
   return (
     <div className="w-90 md:w-full flex flex-col justify-between gap-4 border border-neutral-200 shadow-md rounded-lg p-4 relative">
       {toggleUpdateStatus && (

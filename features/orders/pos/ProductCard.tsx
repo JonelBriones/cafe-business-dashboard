@@ -60,7 +60,7 @@ const ProductCard = ({ item, order, setOrder }: any) => {
   const [error, setError] = useState(false);
   return (
     <div
-      className={`rounded-lg w-full border-2  shadow-md ${
+      className={`rounded-lg w-full border-2 h-fit  shadow-md ${
         order.items.find((item: any) => item.name == name)
           ? "border-green-500"
           : "border-transparent"

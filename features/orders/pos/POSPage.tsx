@@ -15,7 +15,6 @@ const POSPage = () => {
       { id: "4", name: "Cappuccino", quantity: 1, price: 4.0 },
       { id: "24", name: "Blueberry Muffin", quantity: 1, price: 2.5 },
     ],
-    total: 6.5,
     status: "Preparing",
     paymentMethod: "Card",
     createdAt: "2025-03-19T11:15:00Z",
@@ -24,7 +23,7 @@ const POSPage = () => {
   const [paymentMethod, setPaymentMethod] = useState("Card");
 
   return (
-    <div className="flex-1 flex gap-4 w-full">
+    <div className="flex-1 flex gap-4 w-full h-full">
       <div className="flex flex-1 gap-4 flex-col pt-3">
         <Orders />
         <ProductList order={order} setOrder={setOrder} />

@@ -8,6 +8,7 @@ import TopSellingItems from "@/features/dashboard/TopSellingItems";
 import { mockOrders as orders } from "@/data/orders";
 
 import { menuItems } from "@/data/menuItems";
+import OrderQueue from "../orders/OrderQueue";
 const Dashboard = () => {
   return (
     <div className="flex flex-col gap-4 py-4 h-full pr-4">
@@ -16,7 +17,13 @@ const Dashboard = () => {
         <SalesChart />
         <InventoryChart menuItems={menuItems} />
         <TopSellingItems />
-        <div>Recent Orders</div>
+        <div className="flex flex-wrap gap-2 justify-center border p-4 rounded-lg border-neutral-200">
+          {orders.slice(orders.length - 6, orders.length).map((order: any) => (
+            <Fragment key={order.id}>
+              <OrderQueue order={order} />
+            </Fragment>
+          ))}
+        </div>
       </div>
     </div>
   );

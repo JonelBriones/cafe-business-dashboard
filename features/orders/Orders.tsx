@@ -16,7 +16,7 @@ const Orders = () => {
     if (status == "All") return mockOrders.length;
     return mockOrders.filter((order: any) => order.status === status).length;
   };
-
+  console.log(orders);
   return (
     <Fragment>
       <h4 className="text-lg font-medium">Order Line</h4>
@@ -32,8 +32,8 @@ const Orders = () => {
           </Fragment>
         ))}
       </div>
-      <div className="flex gap-3 overflow-auto w-208">
-        {orders.map((order: OrderItem) => (
+      <div className="flex gap-3 overflow-auto w-208 pb-4">
+        {orders.map((order: any) => (
           <Fragment key={order.id}>
             <OrderQueue order={order} />
           </Fragment>

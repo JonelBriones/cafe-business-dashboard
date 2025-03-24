@@ -7,7 +7,6 @@ export interface OrderItem {
   id: string;
   items: itemOrder[];
   status: string;
-  total: number;
 }
 export interface itemOrder {
   id: string;

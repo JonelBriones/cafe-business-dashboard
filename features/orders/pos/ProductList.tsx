@@ -15,8 +15,8 @@ const ProductList = ({ order, setOrder }: any) => {
 
   return (
     <Fragment>
-      <h4 className="text-lg font-semibold mt-3">Food Menu</h4>
-      <div className="flex gap-4 overflow-auto w-208">
+      <h4 className="text-lg font-semibold">Food Menu</h4>
+      <div className="flex gap-4 overflow-auto w-208 pb-4">
         {categories.map((category) => (
           <button
             key={category}
@@ -45,7 +45,7 @@ const ProductList = ({ order, setOrder }: any) => {
         ))}
       </div>
 
-      <div className="grid grid-cols-4 gap-2 overflow-auto h-140 w-208">
+      <div className="grid grid-cols-4 gap-2 overflow-auto h-145 pb-4 w-208">
         {menuItems.map((item) => (
           <Fragment key={item.id}>
             <ProductCard
