@@ -6,7 +6,6 @@ const DashboardStats = ({ orders }: { orders: OrderItem[] }) => {
     let total = 0;
     for (let order of orders) {
       let subtotal = order.items.reduce((a, b) => a + b.quantity + b.price, 0);
-      console.log("sub", subtotal);
       total += subtotal;
     }
     return dollarFormat(parseFloat(getSubtotalWithTax(total)));

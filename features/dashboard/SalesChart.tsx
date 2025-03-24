@@ -8,14 +8,18 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-const SalesChart = ({ dailySalesData }: { dailySalesData: any }) => {
+import { dailySalesData } from "@/data/dailySales";
+interface DailySales {
+  date: string;
+  totalSales: number;
+  totalOrders: number;
+  avgOrderValue: number;
+}
+const SalesChart = () => {
   const types = ["totalSales", "totalOrders", "avgOrderValue"];
-  const [toggleType, selectToggle] = useState("totalOrders");
+  // const [toggleType, selectToggle] = useState("totalOrders");
   const [toggleTimeline, setToggleTimeline] = useState("Month");
   const timelines = ["Week", "Month"];
-  const getMonthSales = () => {
-    console.log();
-  };
 
   let sales =
     toggleTimeline == "Month"
@@ -23,7 +27,7 @@ const SalesChart = ({ dailySalesData }: { dailySalesData: any }) => {
           (day) => new Date(day.date).getMonth() === new Date().getMonth()
         )
       : dailySalesData.slice(dailySalesData.length - 7, dailySalesData.length);
-  console.log(sales);
+
   return (
     <div className="h-96 flex flex-col gap-4 border border-neutral-200 rounded-lg p-4">
       <div className="flex gap-2">
