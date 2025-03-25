@@ -1,6 +1,6 @@
 import React from "react";
 
-const PaymentOptions = ({ paymentMethod, setPaymentMethod }: any) => {
+const PaymentOptions = ({ paymentMethod, setOrder, order }: any) => {
   const paymentMethods = ["Cash", "Card", "Online"];
 
   return (
@@ -10,7 +10,8 @@ const PaymentOptions = ({ paymentMethod, setPaymentMethod }: any) => {
         {paymentMethods.map((method) => (
           <button
             key={method}
-            onClick={() => setPaymentMethod(method)}
+            type="button"
+            onClick={() => setOrder({ ...order, paymentMethod: method })}
             className={`py-1 px-2 flex-1 border-2 rounded-lg cursor-pointer ${
               paymentMethod == method
                 ? "border-green-500"

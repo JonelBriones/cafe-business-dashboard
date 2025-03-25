@@ -9,7 +9,7 @@ const CartItem = ({ item }: any) => {
         <span>{name}</span>
       </div>
       <span className="font-semibold text-black">
-        ${price.toFixed(2) * quantity}
+        ${(price * quantity).toFixed(2)}
       </span>
     </div>
   );

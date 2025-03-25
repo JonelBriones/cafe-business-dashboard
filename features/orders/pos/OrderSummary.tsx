@@ -1,11 +1,10 @@
-import React from "react";
-import { CartInterface, OrderItem } from "../schemas/order";
+import React, { useEffect } from "react";
+import { CartInterface, itemOrder, OrderItem } from "../schemas/order";
 
-const OrderSummary = ({ order }: { order: OrderItem }) => {
-  const { items } = order;
-
+const OrderSummary = ({ cart }: { cart: itemOrder[] }) => {
+  console.log(cart);
   const subtotal = parseFloat(
-    items
+    cart
       .reduce(
         (accumulator: any, currentVal: any) =>
           accumulator + currentVal.price * currentVal.quantity,
@@ -13,6 +12,10 @@ const OrderSummary = ({ order }: { order: OrderItem }) => {
       )
       .toFixed(2)
   );
+  useEffect(() => {
+    console.log(cart);
+    console.log(subtotal);
+  }, [cart]);
 
   const CALIFORNIA_TAX_RATE = 6.0;
   const MANDATORY_LOCAL_RATE = 1.25;

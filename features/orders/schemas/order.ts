@@ -1,10 +1,10 @@
 import { MenuItem } from "./menu";
 
 export interface OrderItem {
-  createdAt: string;
+  createdAt: Date | null;
   customerName?: string;
   paymentMethod: string;
-  id: string;
+  id: number;
   items: itemOrder[];
   status: string;
 }

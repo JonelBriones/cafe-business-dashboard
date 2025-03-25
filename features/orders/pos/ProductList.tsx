@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 import Image from "next/image";
 import { menuItems as menuData } from "@/data/menuItems";
 
-const ProductList = ({ order, setOrder }: any) => {
+const ProductList = ({ order, setOrder, cart, setCart }: any) => {
   const categories = ["All Menu", ...Object.keys(menuData)];
   const [selectCategory, setSelectCategory] = useState("All Menu");
   const allItems = [...Object.values(menuData)].flat();
@@ -53,6 +53,8 @@ const ProductList = ({ order, setOrder }: any) => {
               order={order}
               setOrder={setOrder}
               selectCategory={selectCategory}
+              cart={cart}
+              setCart={setCart}
             />
           </Fragment>
         ))}

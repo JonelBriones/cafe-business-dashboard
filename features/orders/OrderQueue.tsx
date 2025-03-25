@@ -3,8 +3,10 @@ import { itemOrder, OrderItem } from "./schemas/order";
 
 const OrderQueue = ({ order }: { order: OrderItem }) => {
   const { id, items, customerName, status, paymentMethod, createdAt } = order;
-  console.log(order);
-  const convertTimestamp = new Date(new Date(createdAt).getTime()).getMinutes();
+
+  const convertTimestamp = new Date(
+    new Date(createdAt ? createdAt : 0).getTime()
+  ).getMinutes();
   const STATUS_COLOR_BG_CONTAINER = () => {
     if (status == "Completed") return "bg-green-200";
     if (status == "In Progress") return "bg-orange-200";
@@ -20,7 +22,7 @@ const OrderQueue = ({ order }: { order: OrderItem }) => {
 
   return (
     <div
-      className={`${STATUS_COLOR_BG_CONTAINER()} p-3 min-w-50 w-fit rounded-lg transition-colors duration-200 ease-in-out flex flex-col justify-between `}
+      className={`${STATUS_COLOR_BG_CONTAINER()} p-3 min-w-50 w-fit h-25 rounded-lg transition-colors duration-200 ease-in-out flex flex-col justify-between `}
     >
       <div className="flex justify-between">
         <span>#{id}</span>

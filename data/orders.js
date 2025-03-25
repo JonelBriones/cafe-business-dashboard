@@ -1,6 +1,6 @@
 export const mockOrders = [
   {
-    id: "1001",
+    id: 1,
     customerName: "Alice Johnson",
     items: [
       { id: "1", name: "Espresso", quantity: 1, price: 3.0 },
@@ -8,10 +8,10 @@ export const mockOrders = [
     ],
     status: "Completed",
     paymentMethod: "Cash",
-    createdAt: "2025-02-10T09:15:00Z",
+    createdAt: new Date("2025-02-10T09:15:00Z"),
   },
   {
-    id: "1002",
+    id: 2,
     customerName: "Bob Smith",
     items: [
       { id: "3", name: "Latte", quantity: 1, price: 4.5 },
@@ -19,10 +19,10 @@ export const mockOrders = [
     ],
     status: "Completed",
     paymentMethod: "Card",
-    createdAt: "2025-02-15T14:45:00Z",
+    createdAt: new Date("2025-02-15T14:45:00Z"),
   },
   {
-    id: "1003",
+    id: 3,
     customerName: "Emma Davis",
     items: [
       { id: "11", name: "Iced Coffee", quantity: 1, price: 3.5 },
@@ -30,12 +30,12 @@ export const mockOrders = [
     ],
     status: "Pending",
     paymentMethod: "Mobile Payment",
-    createdAt: "2025-02-20T18:20:00Z",
+    createdAt: new Date("2025-02-20T18:20:00Z"),
   },
 
   // 📆 March Orders
   {
-    id: "2001",
+    id: 1,
     customerName: "John Doe",
     items: [
       { id: "3", name: "Latte", quantity: 2, price: 4.5 },
@@ -43,10 +43,10 @@ export const mockOrders = [
     ],
     status: "Pending",
     paymentMethod: "Card",
-    createdAt: "2025-03-01T08:30:00Z",
+    createdAt: new Date("2025-03-01T08:30:00Z"),
   },
   {
-    id: "2002",
+    id: 2,
     customerName: "Samantha Green",
     items: [
       { id: "16", name: "Matcha Latte", quantity: 1, price: 5.0 },
@@ -54,10 +54,10 @@ export const mockOrders = [
     ],
     status: "Completed",
     paymentMethod: "Cash",
-    createdAt: "2025-03-05T10:10:00Z",
+    createdAt: new Date("2025-03-05T10:10:00Z"),
   },
   {
-    id: "2003",
+    id: 3,
     customerName: "Michael Brown",
     items: [
       { id: "13", name: "Iced Latte", quantity: 1, price: 4.5 },
@@ -65,10 +65,10 @@ export const mockOrders = [
     ],
     status: "Cancelled",
     paymentMethod: "Card",
-    createdAt: "2025-03-10T13:30:00Z",
+    createdAt: new Date("2025-03-10T13:30:00Z"),
   },
   {
-    id: "2004",
+    id: 4,
     customerName: "Olivia Taylor",
     items: [
       { id: "5", name: "Mocha", quantity: 1, price: 4.75 },
@@ -76,10 +76,10 @@ export const mockOrders = [
     ],
     status: "Pending",
     paymentMethod: "Mobile Payment",
-    createdAt: "2025-03-18T09:45:00Z",
+    createdAt: new Date("2025-03-18T09:45:00Z"),
   },
   {
-    id: "2005",
+    id: 5,
     customerName: "William Scott",
     items: [
       { id: "31", name: "Egg & Cheese Sandwich", quantity: 1, price: 5.5 },
@@ -87,10 +87,10 @@ export const mockOrders = [
     ],
     status: "Completed",
     paymentMethod: "Card",
-    createdAt: "2025-03-22T07:50:00Z",
+    createdAt: new Date("2025-03-22T07:50:00Z"),
   },
   {
-    id: "1",
+    id: 6,
     customerName: "John Doe",
     items: [
       { id: "3", name: "Latte", quantity: 2, price: 4.5 },
@@ -98,10 +98,10 @@ export const mockOrders = [
     ],
     status: "Pending",
     paymentMethod: "Card",
-    createdAt: "2025-03-19T08:30:00Z",
+    createdAt: new Date("2025-03-19T08:30:00Z"),
   },
   {
-    id: "2",
+    id: 7,
     customerName: "Jane Smith",
     items: [
       { id: "11", name: "Iced Coffee", quantity: 1, price: 4.0 },
@@ -109,10 +109,10 @@ export const mockOrders = [
     ],
     status: "In Progress",
     paymentMethod: "Card",
-    createdAt: "2025-03-19T09:00:00Z",
+    createdAt: new Date("2025-03-19T09:00:00Z"),
   },
   {
-    id: "3",
+    id: 8,
     customerName: "Michael Lee",
     items: [
       { id: "2", name: "Americano", quantity: 1, price: 3.0 },
@@ -120,10 +120,10 @@ export const mockOrders = [
     ],
     status: "Completed",
     paymentMethod: "Card",
-    createdAt: "2025-03-19T09:30:00Z",
+    createdAt: new Date("2025-03-19T09:30:00Z"),
   },
   {
-    id: "4",
+    id: 9,
     customerName: "Emily Davis",
     items: [
       { id: "17", name: "Chai Latte", quantity: 1, price: 4.5 },
@@ -131,10 +131,10 @@ export const mockOrders = [
     ],
     status: "Cancelled",
     paymentMethod: "Card",
-    createdAt: "2025-03-19T10:00:00Z",
+    createdAt: new Date("2025-03-19T10:00:00Z"),
   },
   {
-    id: "5",
+    id: 10,
     customerName: "Chris Brown",
     items: [
       { id: "9", name: "Espresso", quantity: 1, price: 3.0 },
@@ -142,6 +142,6 @@ export const mockOrders = [
     ],
     status: "Pending",
     paymentMethod: "Card",
-    createdAt: "2025-03-19T10:30:00Z",
+    createdAt: new Date("2025-03-19T10:30:00Z"),
   },
 ];

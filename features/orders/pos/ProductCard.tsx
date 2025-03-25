@@ -1,54 +1,34 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import { itemOrder } from "../schemas/order";
 
-const ProductCard = ({ item, order, setOrder }: any) => {
-  const { name, category, price, image } = item;
-  const [quantity, setQuantity] = useState(
-    order.items.find((item: any) => item.name == name)?.quantity || 0
-  );
-
+const ProductCard = ({ item, order, setOrder, cart, setCart }: any) => {
+  const { name, category, price, id } = item;
+  let qty = cart.find((item: any) => item.name == name)?.quantity || 0;
   const removeItem = () => {
-    const updatedOrder = {
-      ...order,
-      items:
-        quantity > 1
-          ? [
-              ...order.items.map((item: any) =>
-                item.name == name
-                  ? { ...item, quantity: item.quantity - 1 }
-                  : item
-              ),
-            ]
-          : [...order.items.filter((item: any) => item.name !== name)],
-    };
+    let qty = cart.find((item: itemOrder) => item.name == name).quantity;
 
-    setOrder(updatedOrder);
-    setQuantity((prev: number) => prev - 1);
+    if (qty > 1) {
+      let updateItem = cart.map((item: itemOrder) =>
+        item.name == name ? { ...item, quantity: item.quantity - 1 } : item
+      );
+      setCart(updateItem);
+    } else {
+      let removedItem = cart.filter((item: itemOrder) => item.name !== name);
+      setCart(removedItem);
+    }
   };
   const addItem = () => {
-    const updatedOrder = {
-      ...order,
-      items:
-        quantity > 0
-          ? [
-              ...order.items.map((item: any) =>
-                item.name == name
-                  ? { ...item, quantity: item.quantity + 1 }
-                  : item
-              ),
-            ]
-          : [
-              ...order.items,
-              {
-                name,
-                price,
-                quantity: quantity + 1,
-              },
-            ],
-    };
+    let itemExist = cart.find((item: itemOrder) => item.name == name);
 
-    setOrder(updatedOrder);
-    setQuantity((prev: number) => prev + 1);
+    if (itemExist) {
+      let updateItem = cart.map((item: itemOrder) =>
+        item.name == name ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setCart(updateItem);
+    } else {
+      setCart([...cart, { name, price, id, quantity: 1 }]);
+    }
   };
 
   const dollarFormat = (total: number) =>
@@ -90,16 +70,18 @@ const ProductCard = ({ item, order, setOrder }: any) => {
         <span className="font-semibold">{dollarFormat(price)}</span>
         <div className="flex justify-center gap-4">
           <button
-            disabled={quantity == 0}
+            disabled={qty == 0}
             onClick={() => removeItem()}
-            className="bg-neutral-200 rounded-full size-6 flex justify-center place-items-center text-sm"
+            className={`bg-neutral-200 rounded-full size-6 flex justify-center place-items-center text-sm ${
+              qty == 0 ? "" : "cursor-pointer"
+            } `}
           >
             -
           </button>
-          <span>{quantity}</span>
+          <span className="w-10 text-center">{qty}</span>
           <button
             onClick={() => addItem()}
-            className="bg-green-500 text-white rounded-full size-6 flex justify-center place-items-center text-sm"
+            className="bg-green-500 text-white rounded-full size-6 flex justify-center place-items-center text-sm cursor-pointer"
           >
             +
           </button>

@@ -3,9 +3,16 @@ export interface MenuItem {
   name: string;
   price: number;
   image?: string;
-  stock: number;
-  minStock: number;
+  ingredients: Ingredients[];
 }
+export interface Ingredients {
+  name: string;
+  quantity: number;
+  unit: string;
+}
+
 export interface Menu {
   [category: string]: MenuItem[];
 }
+
+// use this
