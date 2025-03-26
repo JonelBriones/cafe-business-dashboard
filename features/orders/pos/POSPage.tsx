@@ -7,6 +7,9 @@ import Cart from "./Cart";
 import PaymentOptions from "./PaymentOptions";
 
 import { itemOrder, OrderItem } from "../schemas/order";
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment, addNewOrder } from "./ordersSlice";
+import { RootState } from "@/data/redux/store";
 const defaultOrderForm: OrderItem = {
   id: 0,
   items: [],
@@ -16,24 +19,29 @@ const defaultOrderForm: OrderItem = {
   customerName: "",
 };
 const POSPage = () => {
-  const [orders, setOrders] = useState<OrderItem[]>([]);
   const [order, setOrder] = useState<OrderItem>(defaultOrderForm);
   const [cart, setCart] = useState<itemOrder[]>([]);
+  const orders = useSelector((state: RootState) => state.orders.value);
+  const dispatch = useDispatch();
   const onSubmitOrder = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     // when order is completed, subtract update stock inventory
     let newOrder = {
       ...order,
-      id: orders.length + 1,
-      createdAt: new Date(),
       items: cart,
     };
-    setOrders([...orders, newOrder]);
+    const action = {
+      type: "SET_ORDER",
+      payload: newOrder,
+    };
+
+    dispatch(addNewOrder(newOrder));
+    // setOrders([...orders, newOrder]);
     setOrder(defaultOrderForm);
     setCart([]);
-    console.log("orders", [...orders, newOrder]);
+    // console.log("orders", [...orders, newOrder]);
   };
+
   return (
     <div className="flex-1 flex gap-4 w-full h-full">
       <div className="flex flex-1 gap-4 flex-col pt-3">

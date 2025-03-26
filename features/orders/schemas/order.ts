@@ -1,7 +1,7 @@
 import { MenuItem } from "./menu";
 
 export interface OrderItem {
-  createdAt: Date | null;
+  createdAt: Date | null | string;
   customerName?: string;
   paymentMethod: string;
   id: number;

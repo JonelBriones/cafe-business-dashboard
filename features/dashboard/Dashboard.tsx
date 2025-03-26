@@ -2,11 +2,9 @@
 import React, { Fragment } from "react";
 import DashboardStats from "@/features/dashboard/DashboardStats";
 import InventoryChart from "@/features/dashboard/InventoryChart";
-import RecentOrders from "@/features/dashboard/RecentOrders";
 import SalesChart from "@/features/dashboard/SalesChart";
 import TopSellingItems from "@/features/dashboard/TopSellingItems";
 import { mockOrders as orders } from "@/data/orders";
-
 import { menuItems } from "@/data/menuItems";
 import OrderQueue from "../orders/OrderQueue";
 const Dashboard = () => {
