@@ -1,10 +1,11 @@
 export const mockOrders = [
   {
     id: 1,
+    orderNumber: "1",
     customerName: "Alice Johnson",
     items: [
       { id: "1", name: "Espresso", quantity: 1, price: 3.0 },
-      { id: "7", name: "Black Tea", quantity: 2, price: 3.0 },
+      // { id: "7", name: "Black Tea", quantity: 2, price: 3.0 },
     ],
     status: "Completed",
     paymentMethod: "Cash",
@@ -12,10 +13,11 @@ export const mockOrders = [
   },
   {
     id: 2,
+    orderNumber: "2",
     customerName: "Bob Smith",
     items: [
       { id: "3", name: "Latte", quantity: 1, price: 4.5 },
-      { id: "23", name: "Chocolate Croissant", quantity: 1, price: 3.75 },
+      // { id: "23", name: "Chocolate Croissant", quantity: 1, price: 3.75 },
     ],
     status: "Completed",
     paymentMethod: "Card",
@@ -23,10 +25,11 @@ export const mockOrders = [
   },
   {
     id: 3,
+    orderNumber: "3",
     customerName: "Emma Davis",
     items: [
       { id: "11", name: "Iced Coffee", quantity: 1, price: 3.5 },
-      { id: "45", name: "Chocolate Chip Cookie", quantity: 2, price: 2.0 },
+      // { id: "45", name: "Chocolate Chip Cookie", quantity: 2, price: 2.0 },
     ],
     status: "Pending",
     paymentMethod: "Mobile Payment",
@@ -36,10 +39,11 @@ export const mockOrders = [
   // 📆 March Orders
   {
     id: 1,
+    orderNumber: "1",
     customerName: "John Doe",
     items: [
       { id: "3", name: "Latte", quantity: 2, price: 4.5 },
-      { id: "21", name: "Croissant", quantity: 1, price: 3.0 },
+      // { id: "21", name: "Croissant", quantity: 1, price: 3.0 },
     ],
     status: "Pending",
     paymentMethod: "Card",
@@ -47,10 +51,11 @@ export const mockOrders = [
   },
   {
     id: 2,
+    orderNumber: "2",
     customerName: "Samantha Green",
     items: [
       { id: "16", name: "Matcha Latte", quantity: 1, price: 5.0 },
-      { id: "50", name: "Cheesecake Slice", quantity: 1, price: 4.5 },
+      // { id: "50", name: "Cheesecake Slice", quantity: 1, price: 4.5 },
     ],
     status: "Completed",
     paymentMethod: "Cash",
@@ -58,10 +63,11 @@ export const mockOrders = [
   },
   {
     id: 3,
+    orderNumber: "3",
     customerName: "Michael Brown",
     items: [
       { id: "13", name: "Iced Latte", quantity: 1, price: 4.5 },
-      { id: "27", name: "Danish", quantity: 1, price: 3.25 },
+      // { id: "27", name: "Danish", quantity: 1, price: 3.25 },
     ],
     status: "Cancelled",
     paymentMethod: "Card",
@@ -69,10 +75,11 @@ export const mockOrders = [
   },
   {
     id: 4,
+    orderNumber: "4",
     customerName: "Olivia Taylor",
     items: [
       { id: "5", name: "Mocha", quantity: 1, price: 4.75 },
-      { id: "26", name: "Banana Nut Muffin", quantity: 2, price: 2.75 },
+      // { id: "26", name: "Banana Nut Muffin", quantity: 2, price: 2.75 },
     ],
     status: "Pending",
     paymentMethod: "Mobile Payment",
@@ -80,9 +87,10 @@ export const mockOrders = [
   },
   {
     id: 5,
+    orderNumber: "5",
     customerName: "William Scott",
     items: [
-      { id: "31", name: "Egg & Cheese Sandwich", quantity: 1, price: 5.5 },
+      // { id: "31", name: "Egg & Cheese Sandwich", quantity: 1, price: 5.5 },
       { id: "12", name: "Cold Brew", quantity: 1, price: 4.0 },
     ],
     status: "Completed",
@@ -91,10 +99,11 @@ export const mockOrders = [
   },
   {
     id: 6,
+    orderNumber: "6",
     customerName: "John Doe",
     items: [
       { id: "3", name: "Latte", quantity: 2, price: 4.5 },
-      { id: "21", name: "Croissant", quantity: 1, price: 3.0 },
+      // { id: "21", name: "Croissant", quantity: 1, price: 3.0 },
     ],
     status: "Pending",
     paymentMethod: "Card",
@@ -102,10 +111,11 @@ export const mockOrders = [
   },
   {
     id: 7,
+    orderNumber: "7",
     customerName: "Jane Smith",
     items: [
       { id: "11", name: "Iced Coffee", quantity: 1, price: 4.0 },
-      { id: "24", name: "Blueberry Muffin", quantity: 1, price: 3.5 },
+      // { id: "24", name: "Blueberry Muffin", quantity: 1, price: 3.5 },
     ],
     status: "In Progress",
     paymentMethod: "Card",
@@ -113,6 +123,7 @@ export const mockOrders = [
   },
   {
     id: 8,
+    orderNumber: "8",
     customerName: "Michael Lee",
     items: [
       { id: "2", name: "Americano", quantity: 1, price: 3.0 },
@@ -122,23 +133,25 @@ export const mockOrders = [
     paymentMethod: "Card",
     createdAt: new Date("2025-03-19T09:30:00Z"),
   },
-  {
-    id: 9,
-    customerName: "Emily Davis",
-    items: [
-      { id: "17", name: "Chai Latte", quantity: 1, price: 4.5 },
-      { id: "34", name: "Oatmeal Bowl", quantity: 3, price: 4.0 },
-    ],
-    status: "Cancelled",
-    paymentMethod: "Card",
-    createdAt: new Date("2025-03-19T10:00:00Z"),
-  },
+  // {
+  //   id: 9,
+  //   orderNumber: "9",
+  //   customerName: "Emily Davis",
+  //   items: [
+  //     { id: "17", name: "Chai Latte", quantity: 1, price: 4.5 },
+  //     { id: "34", name: "Oatmeal Bowl", quantity: 3, price: 4.0 },
+  //   ],
+  //   status: "Cancelled",
+  //   paymentMethod: "Card",
+  //   createdAt: new Date("2025-03-19T10:00:00Z"),
+  // },
   {
     id: 10,
+    orderNumber: "10",
     customerName: "Chris Brown",
     items: [
       { id: "9", name: "Espresso", quantity: 1, price: 3.0 },
-      { id: "45", name: "Chocolate Chip Cookie", quantity: 2, price: 2.0 },
+      // { id: "45", name: "Chocolate Chip Cookie", quantity: 2, price: 2.0 },
     ],
     status: "Pending",
     paymentMethod: "Card",

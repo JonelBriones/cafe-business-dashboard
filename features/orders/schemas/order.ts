@@ -4,7 +4,8 @@ export interface OrderItem {
   createdAt: Date | null | string;
   customerName?: string;
   paymentMethod: string;
-  id: number;
+  id: string;
+  orderNumber: string;
   items: itemOrder[];
   status: string;
 }

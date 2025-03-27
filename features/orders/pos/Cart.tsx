@@ -10,6 +10,7 @@ const Cart = ({ cart }: { cart: itemOrder[] }) => {
           {cart.reduce((a, b) => a + b.quantity, 0)}
         </span>
       </div>
+
       <div className="flex flex-col gap-2">
         {cart.map((item: any) => (
           <Fragment key={item.name}>

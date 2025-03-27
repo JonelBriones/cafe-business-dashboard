@@ -2,7 +2,7 @@ import React from "react";
 import { itemOrder, OrderItem } from "./schemas/order";
 
 const OrderQueue = ({ order }: { order: OrderItem }) => {
-  const { id, items, customerName, status, paymentMethod, createdAt } = order;
+  const { orderNumber, items, customerName, status, createdAt } = order;
 
   const convertTimestamp = new Date(
     new Date(createdAt ? createdAt : 0).getTime()
@@ -25,7 +25,7 @@ const OrderQueue = ({ order }: { order: OrderItem }) => {
       className={`${STATUS_COLOR_BG_CONTAINER()} p-3 min-w-50 w-fit h-25 rounded-lg transition-colors duration-200 ease-in-out flex flex-col justify-between `}
     >
       <div className="flex justify-between">
-        <span>#{id}</span>
+        <span>#{orderNumber?.padStart(3, "0")}</span>
         <span>{customerName}</span>
       </div>
       <span>

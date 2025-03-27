@@ -7,6 +7,7 @@ export const inventory = [
     minStock: 1000, // grams (1kg)
     unit: "g",
     costPerUnit: 0.04, // $ per gram
+    image: "/images/coffee/espresso.jpg",
   },
   {
     id: "I-002",
@@ -15,6 +16,7 @@ export const inventory = [
     minStock: 50, // grams
     unit: "g",
     costPerUnit: 0.2,
+    image: "/images/specialty/matcha_latte.jpg",
   },
   {
     id: "I-003",
@@ -23,6 +25,7 @@ export const inventory = [
     minStock: 2000, // milliliters (2L)
     unit: "ml",
     costPerUnit: 0.01,
+    image: "/images/inventory/milk.jpg",
   },
   {
     id: "I-004",
@@ -31,6 +34,7 @@ export const inventory = [
     minStock: 1000, // milliliters (1L)
     unit: "ml",
     costPerUnit: 0.015,
+    image: "/images/inventory/milk.jpg",
   },
   {
     id: "I-005",
@@ -39,6 +43,7 @@ export const inventory = [
     minStock: 500, // milliliters (500ml)
     unit: "ml",
     costPerUnit: 0.03,
+    image: "/images/inventory/chocolate_syrup.jpg",
   },
   {
     id: "I-006",
@@ -47,6 +52,7 @@ export const inventory = [
     minStock: 5000, // milliliters (5L)
     unit: "ml",
     costPerUnit: 0.002,
+    image: "/images/inventory/water.jpg",
   },
   {
     id: "I-007",
@@ -55,6 +61,7 @@ export const inventory = [
     minStock: 5000, // grams (5kg)
     unit: "g",
     costPerUnit: 0.005,
+    image: "/images/inventory/ice_cubes.jpg",
   },
   {
     id: "I-008",
@@ -63,6 +70,7 @@ export const inventory = [
     minStock: 200, // grams
     unit: "g",
     costPerUnit: 0.05,
+    image: "/images/inventory/sweetener.jpg",
   },
 
   // Sandwich Ingredients
@@ -73,6 +81,7 @@ export const inventory = [
     minStock: 10, // pieces
     unit: "pcs",
     costPerUnit: 0.5, // $ per piece
+    image: "/images/inventory/bread.jpg",
   },
   {
     id: "I-010",
@@ -81,6 +90,7 @@ export const inventory = [
     minStock: 500, // grams
     unit: "g",
     costPerUnit: 0.08,
+    image: "/images/inventory/turkey.jpg",
   },
   {
     id: "I-016",
@@ -89,6 +99,7 @@ export const inventory = [
     minStock: 500, // grams
     unit: "g",
     costPerUnit: 0.08,
+    image: "/images/inventory/ham.jpg",
   },
   {
     id: "I-011",
@@ -97,6 +108,7 @@ export const inventory = [
     minStock: 250, // grams
     unit: "g",
     costPerUnit: 0.07,
+    image: "/images/inventory/cheese.jpg",
   },
   {
     id: "I-012",
@@ -105,6 +117,7 @@ export const inventory = [
     minStock: 100, // grams
     unit: "g",
     costPerUnit: 0.03,
+    image: "/images/inventory/lettuce.jpg",
   },
   {
     id: "I-013",
@@ -113,6 +126,7 @@ export const inventory = [
     minStock: 100, // grams
     unit: "g",
     costPerUnit: 0.04,
+    image: "/images/inventory/tomato.jpg",
   },
   {
     id: "I-014",
@@ -121,6 +135,7 @@ export const inventory = [
     minStock: 100, // grams
     unit: "g",
     costPerUnit: 0.03,
+    image: "/images/inventory/cucumber.jpg",
   },
   {
     id: "I-015",
@@ -129,5 +144,6 @@ export const inventory = [
     minStock: 250, // grams
     unit: "g",
     costPerUnit: 0.06,
+    image: "/images/inventory/mayonnaise.jpg",
   },
 ];

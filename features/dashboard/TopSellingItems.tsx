@@ -1,11 +1,13 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { mockOrders } from "@/data/orders";
+
 import { menuItems as menuItemsData } from "@/data/menuItems";
 import ToggleButton from "@/components/dashboard/ui/order/ToggleButton";
 import { Menu } from "../orders/schemas/menu";
+import { OrderItem } from "../orders/schemas/order";
 
-const TopSellingItems = () => {
+const TopSellingItems = ({ orders }: { orders: OrderItem[] }) => {
   const [toggleCategory, setToggleCategory] = useState("all");
+
   const menuItems: Menu = menuItemsData;
   const categories = ["all", ...Object.keys(menuItems)];
 
@@ -13,17 +15,17 @@ const TopSellingItems = () => {
     (item: any) => item.name
   );
 
-  let orders =
+  let ordersForToday =
     toggleCategory === "all"
-      ? mockOrders.flatMap((order) => order.items)
-      : mockOrders
+      ? orders.flatMap((order) => order.items)
+      : orders
           .flatMap((order) => order.items)
           .filter((order) => itemsOfMenuCategory.includes(order.name));
 
   const getTopSellingOrders = () => {
     let hash = new Map<string, { name: string; sold: number }>();
 
-    for (let order of orders) {
+    for (let order of ordersForToday) {
       const exist = hash.get(order.name);
       hash.set(order.name, {
         name: order.name,
@@ -36,7 +38,7 @@ const TopSellingItems = () => {
 
   return (
     <div className="h-96 flex flex-col gap-4 border border-neutral-200 rounded-lg p-4">
-      <div className="flex gap-2">
+      <div className="flex gap-2 overflow-y-auto place-items-center">
         {categories.map((category) => (
           <Fragment key={category}>
             <ToggleButton
@@ -49,7 +51,7 @@ const TopSellingItems = () => {
           </Fragment>
         ))}
       </div>
-      <div className="overflow-auto">
+      <div className="overflow-auto flex-1">
         <table className="table-auto w-full">
           <thead>
             <tr>

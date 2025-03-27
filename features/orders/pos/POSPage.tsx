@@ -5,13 +5,12 @@ import OrderSummary from "./OrderSummary";
 import Orders from "../Orders";
 import Cart from "./Cart";
 import PaymentOptions from "./PaymentOptions";
-
 import { itemOrder, OrderItem } from "../schemas/order";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment, addNewOrder } from "./ordersSlice";
-import { RootState } from "@/data/redux/store";
+import { addNewOrder } from "../../../data/redux/slices/ordersSlice";
+import { RootState } from "@/app/store";
 const defaultOrderForm: OrderItem = {
-  id: 0,
+  orderNumber: "",
   items: [],
   status: "Pending",
   paymentMethod: "",
@@ -25,21 +24,13 @@ const POSPage = () => {
   const dispatch = useDispatch();
   const onSubmitOrder = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // when order is completed, subtract update stock inventory
     let newOrder = {
       ...order,
       items: cart,
     };
-    const action = {
-      type: "SET_ORDER",
-      payload: newOrder,
-    };
-
     dispatch(addNewOrder(newOrder));
-    // setOrders([...orders, newOrder]);
     setOrder(defaultOrderForm);
     setCart([]);
-    // console.log("orders", [...orders, newOrder]);
   };
 
   return (

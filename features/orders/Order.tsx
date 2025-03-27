@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { itemOrder, OrderItem } from "./schemas/order";
-import { MenuItem } from "./schemas/menu";
+
+import { useDispatch } from "react-redux";
+import { updateOrderStatus } from "../../data/redux/slices/ordersSlice";
+import { onNewOrderUpdateStock } from "@/data/redux/slices/inventorySlice";
 type Params = {
   order: OrderItem;
   orders: OrderItem[];
-  setOrders: any;
 };
-const Order = ({ order, orders, setOrders }: Params) => {
+const Order = ({ order }: Params) => {
+  const dispatch = useDispatch();
   const { id, customerName, items, status, createdAt } = order;
+
   const [toggleUpdateStatus, setToggleUpdateStatus] = useState(false);
   const total = items.reduce((a, b) => a + b.price * b.quantity, 0);
   const statuses = ["In Progress", "Completed", "Cancelled"];
@@ -51,17 +55,17 @@ const Order = ({ order, orders, setOrders }: Params) => {
       style: "currency",
       currency: "USD",
     });
-
-  const updateStatus = (status: string) => {
-    setOrders(
-      orders.map((order) =>
-        order.id == id ? { ...order, status: status } : order
-      )
-    );
-
-    setToggleUpdateStatus(false);
+  console.log(items);
+  const getOrderInventoryItems = () => {
+    let inventoryItems = [];
+    for (let item of items) {
+      inventoryItems.push({
+        id: item.id,
+        qty: item.quantity,
+      });
+    }
+    return inventoryItems;
   };
-
   return (
     <div className="w-90 md:w-full flex flex-col justify-between gap-4 border border-neutral-200 shadow-md rounded-lg p-4 relative">
       {toggleUpdateStatus && (
@@ -74,7 +78,14 @@ const Order = ({ order, orders, setOrders }: Params) => {
               <button
                 disabled={status === order.status}
                 key={status}
-                onClick={() => updateStatus(status)}
+                onClick={() => {
+                  setToggleUpdateStatus(false);
+                  dispatch(updateOrderStatus({ id, status }));
+                  if (status === "Completed") {
+                    console.log("update");
+                    dispatch(onNewOrderUpdateStock(getOrderInventoryItems()));
+                  }
+                }}
                 className={`text-lg font-semibold p-1 px-10 rounded-2xl ${STATUS_COLOR(
                   status
                 )} ${STATUS_TEXT_COLOR(status)}  ${

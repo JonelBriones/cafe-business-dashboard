@@ -6,9 +6,9 @@ export interface MenuItem {
   ingredients: Ingredients[];
 }
 export interface Ingredients {
+  id: string;
   name: string;
   quantity: number;
-  unit: string;
 }
 
 export interface Menu {
